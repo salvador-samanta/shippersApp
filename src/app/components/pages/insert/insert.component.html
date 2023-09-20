@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Insert Shipper</h1>
+    <form [formGroup]="shippeesForm">
+        <div class="row">
+            <div class="col">   
+                <mat-form-field class="example-full-width">
+                    <mat-label>Company Name</mat-label>
+                    <input formControlName="companyName" matInput>
+                    <mat-error *ngIf="shippeesForm.get('companyName')?.hasError('required')">This field is required</mat-error>
+                    <mat-error *ngIf="shippeesForm.get('companyName')?.hasError('minlength')">Minimum length is 3 characters</mat-error>
+                    <mat-error *ngIf="shippeesForm.get('companyName')?.hasError('maxlength')">Maximum length is 40 characters</mat-error>
+                    <mat-error *ngIf="shippeesForm.get('companyName')?.hasError('pattern')">Only letters and spaces are allowed</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Phone</mat-label>
+                    <input  formControlName="phone" matInput>
+                    <mat-error *ngIf="shippeesForm.get('phone')?.hasError('required')">This field is required</mat-error>
+                    <mat-error *ngIf="shippeesForm.get('phone')?.hasError('minlength')">Minimum length is 10 characters</mat-error>
+                    <mat-error *ngIf="shippeesForm.get('phone')?.hasError('maxlength')">Maximum length is 24 characters</mat-error>
+                    <mat-error *ngIf="shippeesForm.get('phone')?.hasError('pattern')">Only numbers, '()', '+', and spaces are allowed</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class=row>
+            <div class="col">
+                <div class="button">
+                    <button mat-raised-button color="warn" (click)="close()">Exit</button>
+                    <button mat-raised-button color="primary" (click)="onInsert()" [disabled]="!shippeesForm.valid">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

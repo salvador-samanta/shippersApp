@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.custom-toast-cnfirm {
+    background-color: rgb(2, 152, 2) !important;
+    color: white !important;
+  }
+.custom-toast-cnfirm .mat-simple-snackbar-action {
+    color: white !important;  
+  }
+.custom-toast-error {
+    background-color: rgb(198, 15, 15) !important;
+    color: white !important;
+  }
+.custom-toast-error .mat-simple-snackbar-action {
+    color: white !important;  
+  }
